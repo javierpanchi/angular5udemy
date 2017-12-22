@@ -9,17 +9,19 @@
     </div>
     <mat-card-content>
       <div align="center">
+        <form (keypress)="checkKey($event)">
         <mat-form-field>
-          <input matInput placeholder="email">
+          <input matInput placeholder="username(email)" [(ngModel)]="username" name="username" >
         </mat-form-field><br/>
         <mat-form-field>
-          <input matInput placeholder="password" type="password">
+          <input matInput placeholder="password" type="password" [(ngModel)]="password" name="password">
         </mat-form-field>
+      </form>
       </div>
     </mat-card-content>
     <mat-card-actions>
       <div align="center">
-        <button mat-button><mat-icon>check</mat-icon>Done</button>
+        <button mat-button (click)="checkUserNamePassword()"><mat-icon>check</mat-icon>Done</button>
       </div>
     </mat-card-actions>
   </mat-card>
